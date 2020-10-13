@@ -10,15 +10,5 @@ namespace ClassLibrary.Exceptions
         {
 
         }
-
-        public UnsupportedPageNumberException(string message) : base(message)
-        {
-
-        }
-
-        public UnsupportedPageNumberException(string message, Exception inner) : base(message, inner)
-        {
-
-        }
     }
 }

@@ -19,5 +19,41 @@ namespace UnitTestProject
             //Assert
             Assert.AreEqual("E", book.Title);
         }
+
+        [DataTestMethod]
+        [ExpectedException(typeof(UnsupportedPageNumberException))]
+        [DataRow(8)]
+        [DataRow(2000)]
+        public void TestPageNumberTooShortException(int number)
+        {
+            //Arrange
+            Book book = new Book();
+            //Act
+            book.PageNumber = number;
+            //Assert
+            Assert.AreEqual(number, book.PageNumber);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(IncorrectIsbn13Exception))]
+        public void TestWrongIsbn13Exception()
+        {
+            //Arrange
+            Book book = new Book();
+            //Act
+            book.Isbn13 = "aasfafsd";
+            //Assert
+            Assert.AreEqual("aasfafsd", book.Isbn13);
+        }
+
+        [TestMethod]
+        public void TestConstructor()
+        {
+            //Arrange
+            Book book = new Book("Diary of a Wimpy Kid", "Jeff Kinney", 221, "9780143303831");
+            //Act
+            //Assert
+            Assert.IsInstanceOfType(book, typeof(Book));
+        }
     }
 }

@@ -10,15 +10,5 @@ namespace ClassLibrary.Exceptions
         {
 
         }
-
-        public IncorrectIsbn13Exception(string message) : base(message)
-        {
-
-        }
-
-        public IncorrectIsbn13Exception(string message, Exception inner) : base(message, inner)
-        {
-
-        }
     }
 }

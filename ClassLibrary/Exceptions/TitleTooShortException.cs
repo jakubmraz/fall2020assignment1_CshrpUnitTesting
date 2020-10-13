@@ -10,15 +10,5 @@ namespace ClassLibrary.Exceptions
         {
 
         }
-
-        public TitleTooShortException(string message) : base(message)
-        {
-
-        }
-
-        public TitleTooShortException(string message, Exception inner) : base(message, inner)
-        {
-
-        }
     }
 }
