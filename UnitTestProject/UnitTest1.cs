@@ -55,5 +55,18 @@ namespace UnitTestProject
             //Assert
             Assert.IsInstanceOfType(book, typeof(Book));
         }
+
+        //Only checks for the first one, since if it throws an exception, it means the constructor is working as it should
+        //and they don't all need to be tested individually
+        [TestMethod]
+        [ExpectedException(typeof(TitleTooShortException))]
+        public void TestConstructorException()
+        {
+            //Arrange
+            Book book = new Book("E", "Obama", 10, "Obamium");
+            //Act
+            //Assert
+            Assert.IsInstanceOfType(book, typeof(Book));
+        }
     }
 }
